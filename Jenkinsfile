@@ -20,11 +20,13 @@ pipeline {
         docker { image 'node:17-bullseye' }
       }
       steps {
-        sh 'cd DotnetTemplate.Web'
-        sh 'npm install'
-        sh 'npm run build'
-        sh 'npm run lint'
-        sh 'npm t'
+        dir('cd DotnetTemplate.Web') {
+          sh 'npm install'
+          sh 'npm run build'
+          sh 'npm run lint'
+          sh 'npm t'
+        }
+
       }
     }
   }
