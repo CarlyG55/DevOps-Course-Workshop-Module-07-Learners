@@ -8,7 +8,7 @@ pipeline {
       }
       environment {
         DOTNET_CLI_HOME = "/tmp/dotnet_cli_home"
-        XDG_CONFIG_HOME = "/tmp"
+        XDG_DATA_HOME = "/tmp"
       }
       steps {
         sh 'dotnet build'
