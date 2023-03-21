@@ -66,3 +66,6 @@ jobs:
 
       - name: Push production app to Docker Hub
         run: docker push cargil/dotnettemplate:${{ github.ref_name }}
+
+      - name: Push to Azure
+        run: curl -dH -X POST ${{ secrets.AZURE_WEBHOOK }}
