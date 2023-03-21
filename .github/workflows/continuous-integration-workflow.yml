@@ -62,10 +62,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build image
-        run: docker build --tag cargil/dotnettemplate:${{ github.ref_name }} .
+        run: docker build --tag cargil/dotnettemplate:latest .
 
       - name: Push production app to Docker Hub
-        run: docker push cargil/dotnettemplate:${{ github.ref_name }}
+        run: docker push cargil/dotnettemplate:latest
 
       - name: Push to Azure
         run: curl -dH -X POST ${{ secrets.AZURE_WEBHOOK }}
