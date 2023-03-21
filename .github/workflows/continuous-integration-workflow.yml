@@ -64,7 +64,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build image
-        run: docker build --tag cargil/dotnettemplate:${{ github.ref }} .
+        run: docker build --tag cargil/dotnettemplate:${{ github.ref_name }} .
 
       - name: Push production app to Docker Hub
-        run: docker push cargil/dotnettemplate:${{ github.ref }}
+        run: docker push cargil/dotnettemplate:${{ github.ref_name }}
